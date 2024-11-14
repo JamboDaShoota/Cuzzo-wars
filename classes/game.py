@@ -3,7 +3,7 @@ import pygame
 from pygame import Surface
 from classes.base import Base
 from config import *
-from classes.cameraController import CameraController
+from classes.cameraManager import CameraManager
 
 # Game Class
 class Game:
@@ -13,6 +13,7 @@ class Game:
         self.baseRight = Base(RIGHT_BASE_X, TOP_LANE_HEIGHT // 2, "pink", "right")
         self.baseRight.rect.x -= self.baseRight.rect.width # This is just to align the base properly
         self.window = window
+        self.cameraManager = CameraManager()
 
     # Methods
     def moveAllBots(self) -> None:
